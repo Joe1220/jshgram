@@ -1,0 +1,27 @@
+export const translations = {
+  'kr': {
+    'Don\'t have an account?': '아이디가 없나요',
+    'Sign Up': '가입하기',
+    'Have an account?': '계정이 없나요',
+    'Log in': '로그인',
+    'Get the app': '앱 가지기',
+    'About Us': '어바웃 어스',
+    'Support': '지원',
+    'Blog': '블로그',
+    'Press': '언론',
+    'API': 'api',
+    'Jobs': '채용정보',
+    'Privacy': '개인정보',
+    'Terms': '용어',
+    'Directory': '경로설정',
+    'Language': '언어',
+    'Username': '유저네임',
+    'Password': '패스워드',
+    'Log in with Facebook': '페이스북 로그인',
+    'Forgot password?': '비밀번호를 잊으셨나요?',
+    'Email': '이메일',
+    'name': '이름',
+  },
+  'options': {
+  },
+}

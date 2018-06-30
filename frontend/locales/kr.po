@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Language: kr"
+
+#: src/components/Auth/presenter.js
+msgid "Don't have an account?"
+msgstr "아이디가 없나요"
+
+#: src/components/Auth/presenter.js
+msgid "Sign Up"
+msgstr "가입하기"
+
+#: src/components/Auth/presenter.js
+msgid "Have an account?"
+msgstr "계정이 없나요"
+
+#: src/components/Auth/presenter.js
+msgid "Log in"
+msgstr "로그인"
+
+#: src/components/Auth/presenter.js
+msgid "Get the app"
+msgstr "앱 가지기"
+
+#: src/components/Footer/index.js
+msgid "About Us"
+msgstr "어바웃 어스"
+
+#: src/components/Footer/index.js
+msgid "Support"
+msgstr "지원"
+
+#: src/components/Footer/index.js
+msgid "Blog"
+msgstr "블로그"
+
+#: src/components/Footer/index.js
+msgid "Press"
+msgstr "언론"
+
+#: src/components/Footer/index.js
+msgid "API"
+msgstr "api"
+
+#: src/components/Footer/index.js
+msgid "Jobs"
+msgstr "채용정보"
+
+#: src/components/Footer/index.js
+msgid "Privacy"
+msgstr "개인정보"
+
+#: src/components/Footer/index.js
+msgid "Terms"
+msgstr "용어"
+
+#: src/components/Footer/index.js
+msgid "Directory"
+msgstr "경로설정"
+
+#: src/components/Footer/index.js
+msgid "Language"
+msgstr "언어"
+
+#: src/components/LoginForm/presenter.js
+#: src/components/SignupForm/presenter.js
+msgid "Username"
+msgstr "유저네임"
+
+#: src/components/LoginForm/presenter.js
+#: src/components/SignupForm/presenter.js
+msgid "Password"
+msgstr "패스워드"
+
+#: src/components/LoginForm/presenter.js
+#: src/components/SignupForm/presenter.js
+msgid "Log in with Facebook"
+msgstr "페이스북 로그인"
+
+#: src/components/LoginForm/presenter.js
+msgid "Forgot password?"
+msgstr "비밀번호를 잊으셨나요?"
+
+#: src/components/SignupForm/presenter.js
+msgid "Email"
+msgstr "이메일"
+
+#: src/components/SignupForm/presenter.js
+msgid "name"
+msgstr "이름"
+

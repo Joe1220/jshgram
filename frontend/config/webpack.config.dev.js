@@ -164,6 +164,8 @@ module.exports = {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
+                  modules: true,
+                  localIdentName: "[path][name]__[local]--[hash:base64:5]"
                 },
               },
               {
@@ -190,7 +192,8 @@ module.exports = {
               {
                 loader: require.resolve('sass-loader'),
                 options: {
-                  sourcemap: true
+                  sourcemap: true,
+                  data: `@import "C:/FrontStudy/jshgram/frontend/src/config/_variables.scss";`
                 }
               }
             ],
