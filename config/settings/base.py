@@ -301,5 +301,5 @@ SOCIALACCOUNT_PROVIDERS = {
 }  
 
 REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'nomadgram.users.serializers.SignUpSerializer'
+    'REGISTER_SERIALIZER': 'jshgram.users.serializers.SignUpSerializer'
 }
