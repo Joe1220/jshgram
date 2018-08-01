@@ -1,0 +1,74 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.container {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  max-width: $max-page-width;
+  .column {
+    margin-top: 60px;
+    margin-left: 60px;
+    width: 100%;
+    display: flex;
+    .avatar {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+    }
+    .content {
+      margin-left: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .text {
+        display: flex;
+        @include breakpoint("tablet-phone") {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .username {
+          font-size: 30px;
+          font-weight: 100;
+        }
+        .button {
+          margin-left: 10px;
+          background-color: transparent;
+          width: 100px;
+          cursor: pointer;
+          @include boxBorder(no);
+        }
+        .icon {
+          cursor: pointer;
+          margin-left: 10px;
+        }
+      }
+      .follow {
+        display: flex;
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 300;
+        .followContent {
+          margin-right: 20px;
+        }
+      }
+      .describe {
+        margin-top: 20px;
+        display: flex;
+        .username {
+          font-weight: bold;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.container {
+  width: $max-page-width;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0 auto;
+  margin-top: 60px;
+  @include boxBorder(no);
+  .tab {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgb(235, 234, 234);
+    width: 235px;
+    height: 500px;
+  }
+  .column {
+    
+  }
+}

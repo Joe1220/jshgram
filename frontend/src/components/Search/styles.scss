@@ -1,0 +1,30 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: $max-page-width;
+  margin: 50px auto;
+  align-items: center;
+  .section {
+    width: 100%;
+    margin-bottom: 80px;
+    .title {
+      text-align: left;
+      color: $dark-grey;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .content {
+      display: flex;
+      flex: 1 30px;
+      flex-wrap: wrap;
+    }
+    .notFound {
+      text-align: center;
+      width: 100%;
+      display: block;
+      font-weight: 600;
+    }
+  }
+}
+

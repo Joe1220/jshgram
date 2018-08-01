@@ -2,6 +2,7 @@ import { combineReducers, createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { routerReducer, routerMiddleware } from "react-router-redux";
 import user from "redux/modules/user";
+import photo from "redux/modules/photo";
 import createHistory from "history/createBrowserHistory";
 import { i18nState } from "redux-i18n";
 import  { composeWithDevTools } from "redux-devtools-extension";
@@ -19,6 +20,7 @@ if(env === 'development') {
 
 const reducer = combineReducers({
   user,
+  photo,
   routing: routerReducer,
   i18nState
 });

@@ -33,7 +33,7 @@ const LoginForm = (props, context) => (
     </form>
     <span className={formStyles.divider}>or</span>
     <FacebookLogin
-      appId="163514427656530"
+      appId="155702698444190"
       autoLoad={false}
       fields="name,email,picture"
       callback={props.handleFacebookLogin}

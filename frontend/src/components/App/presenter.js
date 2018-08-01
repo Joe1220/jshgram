@@ -1,31 +1,42 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 import { Route, Switch } from "react-router-dom";
-// import styles from "./styles.scss";
+import "./styles.scss";
 import Footer from "components/Footer";
 import Auth from "components/Auth";
+import Navigation from "components/Navigation";
+import Feed from "components/Feed";
+import Explore from "components/Explore";
+import Search from "components/Search"
+import Profile from "components/Profile";
+import ProfileUpdateForm from "components/ProfileUpdateForm";
+import ResetPassword from "components/ResetPassword";
 
 const App = props => [
-  //Nav,
+  props.isLoggedIn ? <Navigation key={1} /> : null,
   props.isLoggedIn ? <PrivateRoutes key={2} /> : <PublicRoutes key={2} />,
-  <Footer key={3} />
+  <Footer key={4} />
 ];
 
 App.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired
-}
+  isLoggedIn: propTypes.bool.isRequired
+};
 
 const PrivateRoutes = props => (
   <Switch>
-    <Route key="1" exact path="/" render={() => "feed"} />,
-    <Route key="2" path="explore" render={() => "explore"} />
+    <Route exact path="/" component={Feed} />
+    <Route path="/explore/" component={Explore} />
+    <Route path="/search/:searchTerm/" component={Search} />
+    <Route path="/:username/" component={Profile} />
+    <Route path="/:username/profile/" component={ProfileUpdateForm} />
+    <Route path="/:username/password/" component={ProfileUpdateForm} />
   </Switch>
 );
 
 const PublicRoutes = props => (
   <Switch>
-    <Route exact path="/" component={Auth} />,
-    <Route path="/recover" render={() => "recover password"} />
+    <Route exact path="/" component={Auth} />
+    <Route path="/reset" component={ResetPassword} />
   </Switch>
 );
 
