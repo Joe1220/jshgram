@@ -10,9 +10,19 @@ ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['jshgram.com'])
 
 # DATABASES
 # ------------------------------------------------------------------------------
-DATABASES['default'] = env.db('DATABASE_URL')  # noqa F405
-DATABASES['default']['ATOMIC_REQUESTS'] = True  # noqa F405
-DATABASES['default']['CONN_MAX_AGE'] = env.int('CONN_MAX_AGE', default=60)  # noqa F405
+# DATABASES['default'] = env.db('DATABASE_URL')  # noqa F405
+# DATABASES['default']['ATOMIC_REQUESTS'] = True  # noqa F405
+# DATABASES['default']['CONN_MAX_AGE'] = env.int('CONN_MAX_AGE', default=60)  # noqa F405
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env('RDS_DB_NAME'),
+        'USER': env('RDS_DB_USERNAME'),
+        'PASSWORD': env('RDS_DB_PASSWORD'),
+        'HOST': env('RDS_DB_HOSTNAME'),
+        'PORT': env('RDS_DB_PORT'),
+    }
+}
 
 # CACHES
 # ------------------------------------------------------------------------------
@@ -112,30 +122,30 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [  # noqa F405
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
-DEFAULT_FROM_EMAIL = env(
-    'DJANGO_DEFAULT_FROM_EMAIL',
-    default='Jshgram <noreply@jshgram.com>'
-)
-# https://docs.djangoproject.com/en/dev/ref/settings/#server-email
-SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
-# https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
-EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[Jshgram]')
+# DEFAULT_FROM_EMAIL = env(
+#     'DJANGO_DEFAULT_FROM_EMAIL',
+#     default='Jshgram <noreply@jshgram.com>'
+# )
+# # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
+# SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
+# # https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
+# EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[Jshgram]')
 
-# ADMIN
-# ------------------------------------------------------------------------------
-# Django Admin URL regex.
-ADMIN_URL = env('DJANGO_ADMIN_URL')
+# # ADMIN
+# # ------------------------------------------------------------------------------
+# # Django Admin URL regex.
+# ADMIN_URL = env('DJANGO_ADMIN_URL')
 
-# Anymail (Mailgun)
-# ------------------------------------------------------------------------------
-# https://anymail.readthedocs.io/en/stable/installation/#installing-anymail
-INSTALLED_APPS += ['anymail']  # noqa F405
-EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
-# https://anymail.readthedocs.io/en/stable/installation/#anymail-settings-reference
-ANYMAIL = {
-    'MAILGUN_API_KEY': env('MAILGUN_API_KEY'),
-    'MAILGUN_SENDER_DOMAIN': env('MAILGUN_DOMAIN')
-}
+# # Anymail (Mailgun)
+# # ------------------------------------------------------------------------------
+# # https://anymail.readthedocs.io/en/stable/installation/#installing-anymail
+# INSTALLED_APPS += ['anymail']  # noqa F405
+# EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+# # https://anymail.readthedocs.io/en/stable/installation/#anymail-settings-reference
+# ANYMAIL = {
+#     'MAILGUN_API_KEY': env('MAILGUN_API_KEY'),
+#     'MAILGUN_SENDER_DOMAIN': env('MAILGUN_DOMAIN')
+# }
 
 # Gunicorn
 # ------------------------------------------------------------------------------
